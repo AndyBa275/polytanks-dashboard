@@ -14,7 +14,7 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    path = r"C:\Users\spt-admin\Desktop\PORTFOLIO\Polytanks_Cleaned.xlsx"
+    path = "Polytanks_Cleaned.xlsx"
     sales = pd.read_excel(path, sheet_name="Distributor_Sales", parse_dates=["Date"])
     prod  = pd.read_excel(path, sheet_name="Factory_Production", parse_dates=["Date"])
     rm    = pd.read_excel(path, sheet_name="RM_Inventory",       parse_dates=["Date"])
@@ -466,8 +466,7 @@ with tab4:
 
 with tab5:
     st.markdown("### Data Cleaning Log — All Issues Found & Fixed")
-    path = r"C:\Users\spt-admin\Desktop\PORTFOLIO\Polytanks_Cleaned.xlsx"
-    log = pd.read_excel(path, sheet_name="Cleaning_Log")
+    log = pd.read_excel("Polytanks_Cleaned.xlsx", sheet_name="Cleaning_Log")
     st.dataframe(log, use_container_width=True, hide_index=True)
     st.markdown(f"**Total issues documented: {len(log)}**")
 
